@@ -22,6 +22,7 @@ public class MouseLook : MonoBehaviour
         _rotationX -= Input.GetAxis("Mouse Y") * sensitivityVert;
         _rotationX = Mathf.Clamp(_rotationX, minimumVert, maximumVert);
         float delta = Input.GetAxis("Mouse X") * sensitivityHor; //Новая переменная хранит считываемое изменение мыши по Х
-
+        float rotationY = transform.localEulerAngles.y + delta;//Значение delta - это величина изменения угла поворота
+        transform.localEulerAngles = new Vector3(_rotationX, rotationY, 0);
     }
 }
