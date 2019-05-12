@@ -4,28 +4,37 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    public float damage = 5.0f; //переменная наносимого урона
-    public float range = 50.0f; // переменная дальности луча
+    public float damage = 5.0f;
+    public float range = 50.0f;
 
     public Camera cam;
 
+    public ParticleSystem plazmLaser;
+
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked; //блокируем курсор мыши
-        Cursor.visible = false;  //скрываем курсор мыши
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false; //скрываем указатель мыши
+        plazmLaser.Stop();
     }
 
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
-        { //нажимаем на левую кнопку мыши
+        {
+            plazmLaser.Play();
             Vector3 point = new Vector3(cam.pixelWidth / 2, cam.pixelHeight / 2, 0);
             RaycastHit hit;
-            Ray ray = cam.ScreenPointToRay(point); //создание луча методом ScreenPointToRay().
-            if (Physics.Raycast(ray, out hit, range))
+            Ray ray = cam.ScreenPointToRay(point); //Создание луча методом ScreenPointToRay().
+            if (Physics.Raycast(ray, out hit ,range))
             {
-                Debug.Log(hit.transform.name); // выводим имя объекта, в который попадает луч
+                Debug.Log(hit.transform.name);
 
+                Strength objectVase = hit.transform.GetComponent<Strength>();
+                if (objectVase != null)
+                {
+                    objectVase.Damage(damage);
+                }
             }
         }
     }
