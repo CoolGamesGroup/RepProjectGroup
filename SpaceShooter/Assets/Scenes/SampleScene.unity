@@ -6290,6 +6290,19 @@ MonoBehaviour:
   minDistance: 1
   distance: 0
   target: {fileID: 1131604931}
+  player: {fileID: 1131604935}
+--- !u!114 &915448652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915448650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdde2c2972d364b97a3a6f392024a0e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &923980142 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 464552, guid: 64b3f36e835346747865afbf6cf62acf,
@@ -6604,7 +6617,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1131604927}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f3e6cb9aa0354d11b55cc367c2f36c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ba810869a1494b07a0622ba52a1e4bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1156300982
